@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Logo from './img/Logo.svg';
 import './App.css';
+import axios from "axios";
 
 interface FormValues {
   email: string;
@@ -14,9 +15,28 @@ const initialValues: FormValues = {
 };
 
 const App: React.FC = () => {
-  const handleSubmit = (values: FormValues) => {
-    // Aqui você pode lidar com os valores do formulário
-    console.log(values);
+  const handleSubmit = async (values: FormValues) => {
+    try {
+      const response = await axios.post(
+        'https://api.homologation.cliqdrive.com.br/auth/login/',
+        values,
+        {
+          headers: {
+            'Accept': 'application/json;version=v1_web',
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      console.log('Usuário logado com sucesso:', response.data);
+      // Redirecionar para a próxima página, se necessário
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        console.error('Erro de login:', error.response?.data);
+        // Tratar erros de login, como exibir uma mensagem para o usuário
+      } else {
+        console.error('Erro de login:', error);
+      }
+    }
   };
 
   const validate = (values: FormValues) => {
@@ -38,7 +58,6 @@ const App: React.FC = () => {
   };
 
   const isValidEmail = (email: string) => {
-    // Lógica de validação de e-mail simples
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
