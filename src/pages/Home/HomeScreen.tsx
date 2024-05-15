@@ -1,8 +1,9 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import Logo from './img/Logo.svg';
-import './App.css';
+import Logo from '../../img/Logo.svg';
+import './HomeScreen.css';
 import axios from "axios";
+import { useNavigate } from 'react-router';
 
 interface FormValues {
   email: string;
@@ -14,7 +15,9 @@ const initialValues: FormValues = {
   password: '',
 };
 
-const App: React.FC = () => {
+const Home: React.FC = () => {
+    const navigate = useNavigate();
+
   const handleSubmit = async (values: FormValues) => {
     try {
       const response = await axios.post(
@@ -29,6 +32,8 @@ const App: React.FC = () => {
       );
       console.log('Usuário logado com sucesso:', response.data);
       // Redirecionar para a próxima página, se necessário
+      localStorage.setItem('token', "Logado");
+      navigate('/profile');
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         console.error('Erro de login:', error.response?.data);
@@ -103,4 +108,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Home;
