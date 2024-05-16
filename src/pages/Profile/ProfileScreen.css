@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.App {
+    text-align: center;
+    background-color: #F1F5F9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.App-header {
+    min-height: 100%;
+    min-width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 1300px;
+    height: 70px;
+}
+
+.Button {
+    margin-right: 10px;
+    border-radius: 6.33px;
+    width: 272px;
+    height: 44px;
+    background-color: #02274F;
+    border: 0;
+    color: #FFFFFF;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+}
+
+.App-container-profile {
+    background-color: #FFFFFF;
+    width: 356px;
+    height: 315px;
+    margin-top: 100px;
+    left: 549px;
+    gap: 0px;
+    border-radius: 16px;
+    opacity: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .App-profile-head {
+    margin-left: 125px;
+  }
+
+.Text {
+    margin-left: 25px;
+}  
+
+.Text1 {
+    font-family: "Nunito";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 12px;
+    text-align: left;
+}
+.Text2 {
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 12px;
+    text-align: left;
+}
+
+.Container-text {
+    padding: 18px 18px 20.25px 18px;
+    background-color: #F4F4F4;
+    text-align: left;
+    width: 270px;
+    border-radius: 8px;
+    margin-left: 25px;
+    font-family: Nunito;
+font-size: 12px;
+font-weight: 400;
+line-height: 12px;
+text-align: left;
+
+}

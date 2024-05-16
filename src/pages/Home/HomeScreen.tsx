@@ -15,7 +15,7 @@ const initialValues: FormValues = {
   password: '',
 };
 
-const Home: React.FC = () => {
+const HomeScreen: React.FC = () => {
     const navigate = useNavigate();
 
   const handleSubmit = async (values: FormValues) => {
@@ -32,7 +32,7 @@ const Home: React.FC = () => {
       );
       console.log('Usuário logado com sucesso:', response.data);
       // Redirecionar para a próxima página, se necessário
-      localStorage.setItem('token', "Logado");
+      localStorage.setItem('token', JSON.stringify(response.data.tokens.access));
       navigate('/profile');
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
@@ -108,4 +108,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomeScreen;
