@@ -21,6 +21,10 @@ Projeto desenvolvido para desafio na empresa B2BIT, para vaga de desenvolvedor F
 
 ### Prévia do projeto
 Se tudo tiver dado certo, é assim que você deve vizualizar o projeto em seu navegador no caminho: http://localhost:3000/
+
+## Link
+Caso queira acessar o site sem clonar aplicação, acesse o link: https://desafio-b2bit-six.vercel.app/
+
 <br><br>
 <img src="./src/img/Application.png" alt="Application" width="500"/>
 
@@ -63,6 +67,10 @@ Project developed for a challenge at the company B2BIT, for a Frontend developer
 
 ### Project preview
 If everything went well, this is how you should view the project in your browser on the way: http://localhost:3000/
+
+## Link
+If you want to access the website without cloning the application, access the link: https://desafio-b2bit-six.vercel.app/
+
 <br><br>
 <img src="./src/img/Application.png" alt="Application" width="500"/>
 
