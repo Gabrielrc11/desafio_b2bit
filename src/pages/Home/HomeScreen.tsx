@@ -1,9 +1,11 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useNavigate } from 'react-router';
+import axios from "../../BaseService";
+
 import Logo from '../../img/Logo.svg';
 import './HomeScreen.css';
-import axios from "axios";
-import { useNavigate } from 'react-router';
+
 
 interface FormValues {
   email: string;
@@ -16,30 +18,21 @@ const initialValues: FormValues = {
 };
 
 const HomeScreen: React.FC = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (values: FormValues) => {
     try {
       const response = await axios.post(
         'https://api.homologation.cliqdrive.com.br/auth/login/',
         values,
-        {
-          headers: {
-            'Accept': 'application/json;version=v1_web',
-            'Content-Type': 'application/json'
-          }
-        }
       );
-      console.log('Usuário logado com sucesso:', response.data);
-      // Redirecionar para a próxima página, se necessário
       localStorage.setItem('token', JSON.stringify(response.data.tokens.access));
       navigate('/profile');
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
-        console.error('Erro de login:', error.response?.data);
-        // Tratar erros de login, como exibir uma mensagem para o usuário
+        alert("E-mail e/ou senha incorreto(s)");
       } else {
-        console.error('Erro de login:', error);
+        alert("Erro de login");
       }
     }
   };
@@ -55,10 +48,7 @@ const HomeScreen: React.FC = () => {
 
     if (!values.password) {
       errors.password = 'Campo obrigatório';
-    } else if (values.password.length < 3) {
-      errors.password = 'A senha deve ter pelo menos 3 caracteres';
     }
-
     return errors;
   };
 
@@ -81,7 +71,7 @@ const HomeScreen: React.FC = () => {
                 <div className="form-group">
                   <label htmlFor="email">E-mail</label>
                   <br></br>
-                  <Field type="email" name="email" className="form-control-mail" placeholder="@gmail.com"/>
+                  <Field type="email" name="email" className="Form-field-email" placeholder="@gmail.com"/>
                   <ErrorMessage name="email" component="div" className="error" />
                 </div>
 
@@ -90,13 +80,13 @@ const HomeScreen: React.FC = () => {
                 <div className="form-group">
                   <label htmlFor="password">Password</label>
                   <br></br>
-                  <Field type="password" name="password" className="form-control-pass" placeholder="****************"/>
+                  <Field type="password" name="password" className="Form-field-password" placeholder="****************"/>
                   <ErrorMessage name="password" component="div" className="error" />
                 </div>
 
                 <br></br>
 
-                <button type="submit" className="btn-primary" disabled={isSubmitting}>
+                <button type="submit" className="Button-submit" disabled={isSubmitting}>
                   Sign in
                 </button>
               </Form>

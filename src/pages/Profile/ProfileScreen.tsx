@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import axios from 'axios';
+import axios from '../../BaseService';
+
 import './ProfileScreen.css';
+
 
 const ProfileScreen: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [image, setImage] = useState('');
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,8 +21,6 @@ const ProfileScreen: React.FC = () => {
           {
             headers: {
               Authorization: `Bearer ${token}`,
-              Accept: 'application/json;version=v1_web',
-              'Content-Type': 'application/json'
             }
           }
         );
@@ -28,7 +29,7 @@ const ProfileScreen: React.FC = () => {
         if (response.data.avatar && response.data.avatar.image_high_url) {
           setImage(response.data.avatar.image_high_url);
         } else {
-          setImage(''); // Define uma imagem padrão ou vazia caso avatar ou image_high_url estejam ausentes
+          setImage('');
         }
       } catch (error) {
         console.error('Erro ao buscar perfil:', error);
@@ -36,7 +37,7 @@ const ProfileScreen: React.FC = () => {
     };
 
     fetchProfile();
-  }, []); // A lista de dependências está vazia para que o useEffect só seja chamado uma vez, similar a componentDidMount
+  }, []);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -46,9 +47,7 @@ const ProfileScreen: React.FC = () => {
   return (
     <div className="App">
       <div className="App-header">
-        <button className="Button" onClick={handleLogout}>
-          Logout
-        </button>
+        <button className="Button" onClick={handleLogout}>Logout</button>
       </div>
       <div className="App-container-profile">
         <div className="App-profile-head">
@@ -59,12 +58,10 @@ const ProfileScreen: React.FC = () => {
         <div className="Container-text">
         {name}
         </div>
-        
         <p className="Text"><span className="Text1">Your</span> <span className="Text2">E-mail</span></p>
         <div className="Container-text">
         {email}
         </div>
-        
       </div>
     </div>
   );
