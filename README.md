@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+# Desafio B2BIT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição:
+Projeto desenvolvido para desafio na empresa B2BIT, para vaga de desenvolvedor Frontend.
 
-## Available Scripts
+## Requisitos:
+- NodeJS
+  - Instalar NodeJS - <a href="https://nodejs.org/dist/v20.12.2/node-v20.12.2-x64.msi">Baixar!</a>
 
-In the project directory, you can run:
+## Executando projeto
+1. Através do GIT clone o repositório do projeto:
+    - ```git clone https://github.com/Gabrielrc11/desafio_b2bit.git```
+2. Entre na pasta **desafio_b2bit** com o comando:
+    - ```cd desafio_b2bit```
+3. Execute o seguinte comando para instalar as dependencias do Projeto:
+    - ```npm install react-scripts --save-dev```
+4. Execute o seguinte comando para rodar o projeto:
+    - ```npm start```
+> [!NOTE]
+> Para parar a execução do projeto use, no terminal, as teclas: ```Ctrl + C e digite a tecla S para confirmar```
 
-### `npm start`
+### Prévia do projeto
+Se tudo tiver dado certo, é assim que você deve vizualizar o projeto em seu navegador no caminho: http://localhost:3000/
+<br><br>
+<img src="./src/img/Application.png" alt="Application" width="500"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Padronizações
+### Commits
+Os commits devem seguir o padrão mostrado no site do <a href="https://www.conventionalcommits.org/pt-br/v1.0.0/" target="_blank">Conventional Commits</a>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Branches
+A padronização das **Branches** é parecida com a padronização dos commits, onde o nome da branch precisa ter um ***préfixo*** da seguinte forma:
+ - ```feature/name_branch```
+Esses **préfixo** podem ser:
 
-### `npm test`
+| Préfixos  | Descrição |
+| ------------- | ------------- |
+| feature | Usado na branch que tem o objetivo de adicionar, refatorar ou remover um recurso  |
+| bugfix  | Usado na branch que tem o objetivo de corrigir um bug  |
+| hotfix  | Usado na branch que tem o objetivo de alterar o código com uma solução temporária e/ou sem seguir o processo normal (geralmente devido a uma emergência)  |
+| improvement  | Usado na branch que tem o objetivo criar uma melhoria para algo que já existente, seja de performance, de escrita, de layout, etc. |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Challenge B2BIT
 
-### `npm run build`
+## Description:
+Project developed for a challenge at the company B2BIT, for a Frontend developer position.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Requirements:
+- NodeJS
+  - Install NodeJS - <a href="https://nodejs.org/dist/v20.12.2/node-v20.12.2-x64.msi">Download!</a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running project
+1. Using GIT, clone the project repository:
+    - ```git clone https://github.com/Gabrielrc11/desafio_b2bit.git```
+2. Enter the folder **desafio_b2bit** with the command:
+    - ```cd desafio_b2bit```
+3. Run the following command to install the Project dependencies:
+    - ```npm install react-scripts --save-dev```
+4. Run the following command to run the project:
+    - ```npm start```
+> [!NOTE]
+> To stop the execution of the project, use the terminal keys: ```Ctrl + C and press the S key to confirm```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Project preview
+If everything went well, this is how you should view the project in your browser on the way: http://localhost:3000/
+<br><br>
+<img src="./src/img/Application.png" alt="Application" width="500"/>
 
-### `npm run eject`
+## Standardizations
+### Commits
+Commits must follow the pattern shown on the website <a href="https://www.conventionalcommits.org/pt-br/v1.0.0/" target="_blank">Conventional Commits</a>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Branches
+The standardization of **Branches** is similar to the standardization of commits, where the branch name needs to have a ***prefix*** this way:
+ - ```feature/name_branch```
+Those **prefix** can be:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Prefix  | Description |
+| ------------- | ------------- |
+| feature | Used in the branch that has the objective of adding, refactoring or removing a feature  |
+| bugfix  | Used in the branch that aims to fix a bug  |
+| hotfix  | Used in the branch that aims to change the code with a temporary solution and/or without following the normal process (usually due to an emergency)  |
+| improvement  | Used in the branch that aims to create an improvement for something that already exists, be it performance, writing, layout, etc. |
